@@ -1,20 +1,15 @@
 var score = 0;
 
-postToPage(score); // Print to the page
+postToPage(score);
 
-<<<<<<< HEAD
 createButton('ADD', btnPressAdd);
-=======
-createButton('Button', btnPress); // Make a button
->>>>>>> upstream/master
 changeTitle('Clicker Game');
-createText('Hello');
 
 createButton('SUBTRACT', btnPressSub);
 changeTitle('Clicker Game');
 
-setInterval(btnPressAdd, 10000);
-setInterval(btnPressSub, 10000);
+setInterval(btnPressAdd, 1000);
+setInterval(btnPressSub, 1000);
 
 function btnPressAdd() {
   score++;

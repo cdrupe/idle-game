@@ -1,22 +1,29 @@
-var score = 1; // Create a variable to store the score in
+var score = 1; 
 
-postToPage(score);
+var title = new Title(''); 
+var button = new Button('Hello Johny', btnPress);         
+var scr = new Text(score);                     
 
-createButton('ADD', btnPressAdd);
-changeTitle('Clicker Game');
+let button1 = new Button('Hello', btnPress1); 
+button1.hide()
 
-createButton('SUBTRACT', btnPressSub);
-changeTitle('Clicker Game');
-
-setInterval(btnPressAdd, 1000);
-setInterval(btnPressSub, 1000);
-
-function btnPressAdd() {
-  score++;
-  postToPage(score);
+if(score > 10) {
+  button1.show();               
 }
 
-function btnPressSub() {
-  score--;
-  postToPage(score);
+
+
+setInterval(btnPress, 2000000); 
+ 
+
+function btnPress() {
+  score++;         
+  scr.edit(score); 
 }
+
+function btnPress1() {
+  score++;         
+  scr.edit(score); 
+}
+
+

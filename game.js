@@ -21,9 +21,6 @@ function btnPress() {
   scr.edit(score); 
 }
 
-function btnPress1() {
-  score++;         
-  scr.edit(score); 
-}
+
 
 

@@ -1,32 +1,38 @@
 var score = 1; 
 
-var title = new Title('Welcome to the Game'); // Create a title element
-var button = new Button('hello', btnPress);   // Create a button element
-var hidden = new Button('Boo!');
+var title = new Title('Welcome to the Game'); 
+var button = new Button('Hello', btnPress);   
+var hidden = new Button('Welcome', btnPress);
+var gone = new Button('To', btnPress);
+var gone1 = new Button('The', btnPress)
 hidden.hide();
-var scr = new Text(score);                    // Create a text element
+gone.hide()
+gone1.hide()
+var scr = new Text(score);                  
 
-let button1 = new Button('Hello', btnPress1); 
-button1.hide()
-
-if(score > 10) {
-  button1.show();               
-}
-
-
-
-setInterval(btnPress, 2000000); 
+setInterval(btnPress, 10000); 
  
-
 function btnPress() {
-  score++;         // Increase the score
-  scr.edit(score); // Update the page with the new score
-  if(score > 10) {
+  score++;         
+  scr.edit(score); 
+
+
+  if(score > 19) {
     hidden.show();
   }
-  if(score > 15) {
-    hidden.hide(500);
+  if(score > 24) {
+   hidden.hide(500);
   }
+  if(score > 24) {
+    gone.show(500);
+  }
+  if(score > 29) {
+    gone.hide(500);
+  }
+   if(score > 29) {
+     gone1.show(500);
+   }
+
 }
 
 

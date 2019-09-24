@@ -1,38 +1,50 @@
-var score = 1; 
+var steps = 1; 
+var rocks = 1;
+var sticks = 1;
 
-var title = new Title('Welcome to the Game'); 
-var button = new Button('Hello', btnPress);   
-var hidden = new Button('Welcome', btnPress);
-var gone = new Button('To', btnPress);
-var gone1 = new Button('The', btnPress)
-hidden.hide();
-gone.hide()
-gone1.hide()
-var scr = new Text(score);                  
+var stepsforward = new Button('Take Steps', btnPress); 
+var stepsback = new Button('Take Steps Back', btnPressback)
+var r0cks = new Button('Take Rocks', btnPress2);
+r0cks.hide()
+var st1cks = new Button('Take Sticks', btnPress3)
+st1cks.hide()
+
+var scr = new Text(steps);                  
+var rck = new Text('Rocks', rocks);
+rck.hide()
+var stk = new Text('Sticks', sticks);
+stk.hide()
 
 setInterval(btnPress, 10000); 
+setInterval(btnPress2, 10500);
  
 function btnPress() {
-  score++;         
-  scr.edit(score); 
+  steps++;         
+  scr.edit(steps);  
+
+if (steps > 20) {
+  r0cks.show();
+  rck.show();
+  }
+  if (steps > 20) {
+    st1cks.show();
+    stk.show();
+    }
+}
+function btnPressback() {
+  steps--;
+  scr.edit(steps);
+}
 
 
-  if(score > 19) {
-    hidden.show();
-  }
-  if(score > 24) {
-   hidden.hide(500);
-  }
-  if(score > 24) {
-    gone.show(500);
-  }
-  if(score > 29) {
-    gone.hide(500);
-  }
-   if(score > 29) {
-     gone1.show(500);
-   }
+function btnPress2() {
+  rocks++;
+  rck.edit(rocks);
+}
 
+function btnPress3() {
+  sticks++;
+  stk.edit(sticks);
 }
 
 

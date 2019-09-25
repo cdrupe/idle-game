@@ -1,6 +1,6 @@
-var steps = 1; 
-var rocks = 1;
-var sticks = 1;
+var steps = 0; 
+var rocks = 0;
+var sticks = 0;
 
 var stepsforward = new Button('Take Steps', btnPress); 
 var stepsback = new Button('Take Steps Back', btnPressback)
@@ -9,43 +9,52 @@ r0cks.hide()
 var st1cks = new Button('Take Sticks', btnPress3)
 st1cks.hide()
 
-var scr = new Text(steps);                  
-var rck = new Text('Rocks', rocks);
+var scr = new Text('Steps : ' + steps);                  
+var rck = new Text('Rocks : ' + rocks);
 rck.hide()
-var stk = new Text('Sticks', sticks);
+var stk = new Text('Sticks : ' + sticks);
 stk.hide()
+
 
 setInterval(btnPress, 10000); 
 setInterval(btnPress2, 10500);
+setInterval(btnPress3, 10500);
  
 function btnPress() {
   steps++;         
-  scr.edit(steps);  
+  scr.edit(steps); 
 
-if (steps > 20) {
-  r0cks.show();
-  rck.show();
-  }
   if (steps > 20) {
-    st1cks.show();
-    stk.show();
+    r0cks.show();
+    rck.show();
     }
+
+    if (steps > 20) {
+      st1cks.show();
+      stk.show();
+      }
+    
 }
-function btnPressback() {
-  steps--;
-  scr.edit(steps);
-}
+  function btnPressback() {
+    steps--;
+    scr.edit(steps);
+  }
+  
+  
+  function btnPress2() {
+    rocks++;
+    rck.edit(rocks);
+  }
+  
+  function btnPress3() {
+    sticks++;
+    stk.edit(sticks);
+  }
+   
+
+  
 
 
-function btnPress2() {
-  rocks++;
-  rck.edit(rocks);
-}
-
-function btnPress3() {
-  sticks++;
-  stk.edit(sticks);
-}
 
 
 

@@ -1,56 +1,49 @@
-var steps = 0; 
-var rocks = 0;
-var sticks = 0;
+var stry = new Title('You finally make it to the drive way with the package in your bag.'); 
 
-var stepsforward = new Button('Take Steps', btnPress); 
-var stepsback = new Button('Take Steps Back', btnPressback)
-var r0cks = new Button('Take Rocks', btnPress2);
-r0cks.hide()
-var st1cks = new Button('Take Sticks', btnPress3)
-st1cks.hide()
+var walk = new Button('Hop out of the truck', walk1); 
+var drive = new Button('Drive away', drive1)
+var go = new Button('Continue', go)
+go.hide()
+var go2 = new Button('Continue', go2)
+go2.hide()
+var enter = new Button('enter', enter)
+enter.hide()
+var keepwalking = new Button()
+keepwalking.hide()
 
-var scr = new Text('Steps : ' + steps);                  
-var rck = new Text('Rocks : ' + rocks);
-rck.hide()
-var stk = new Text('Sticks : ' + sticks);
-stk.hide()
-
-
-setInterval(btnPress, 10000); 
-setInterval(btnPress2, 10500);
-setInterval(btnPress3, 10500);
- 
-function btnPress() {
-  steps++;         
-  scr.edit(steps); 
-
-  if (steps > 20) {
-    r0cks.show();
-    rck.show();
-    }
-
-    if (steps > 20) {
-      st1cks.show();
-      stk.show();
-      }
-    
+function walk1() {
+   stry.edit('You begin to walk through the woods')
+ walk.hide()
+ drive.hide()
+ go.show()
 }
-  function btnPressback() {
-    steps--;
-    scr.edit(steps);
-  }
+
+function drive1() {
+  stry.edit('You drive away. You never deliver the package and get fired from your job.')
+  drive.hide()
+  walk.hide()
+}
+function go() {
+  stry.edit('As you walk the only thing you can here is your breathing.')
+  go.hide()
+  go2.show()
+}
+function go2(){
+stry.edit('As you walk you see an abandonded cabin.')
+enter.show()
+go2.hide()
+}
+function enter1() {
+  stry.edit('You decide to keep walking')
+  go2.hide()
+  enter.show()
+}
+
+
+
+
+
   
-  
-  function btnPress2() {
-    rocks++;
-    rck.edit(rocks);
-  }
-  
-  function btnPress3() {
-    sticks++;
-    stk.edit(sticks);
-  }
-   
 
   
 
